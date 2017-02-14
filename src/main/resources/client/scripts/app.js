@@ -16,8 +16,7 @@
             // Système de routage
             $routeProvider
                 .when('/accueil', {
-                    templateUrl: '/views/accueil.html',
-                    controller: 'accueilCtrl'
+                    templateUrl: '/views/accueil.html'
                 })
                 .when('/formations', {
                     templateUrl: '/views/formations.html',

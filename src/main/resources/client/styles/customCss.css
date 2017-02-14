@@ -8,5 +8,34 @@ td a:hover{
 }
 
 .maTable th{
-	width:10%;
+	width:20%;
 }
+
+.navbar-fixed-left {
+  width: 15em;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 14.9em;
+}
+
+.container {
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 5em;
+    padding-right: 15px;
+}
+
+.title{
+	margin-bottom: 1em;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+/*.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}*/
