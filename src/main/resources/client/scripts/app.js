@@ -24,7 +24,11 @@
                 })
                 .when('/formation/:codeFormation', {
                     templateUrl: '/views/formationDetails.html',
-                    controller: 'formationCtrl'
+                    controller: 'formationDetailsCtrl'
+                })
+                .when('/formation/:codeFormation/edit', {
+                    templateUrl: '/views/editFormation.html',
+                    controller: 'editFormationCtrl'
                 })
                 .otherwise({
                     redirectTo: '/accueil'

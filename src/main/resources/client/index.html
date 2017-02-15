@@ -62,26 +62,32 @@
 
 	<!-- build:js({.tmp,client}) scripts/app.js -->
 	<script src="scripts/app.js"></script>
+    <script src="scripts/dataFactoryFormation.js"></script>
+    <!-- endbuild -->
+
+    <!-- Controllers -->
 	<script src="scripts/controllers/formation.js"></script>
-	<!-- endbuild -->
+    <script src="scripts/controllers/formationDetails.js"></script>
+    <script src="scripts/controllers/editFormation.js"></script>
+	<!-- endControllers -->
 
 	<div class="navbar navbar-inverse navbar-fixed-left">
 		<a class="navbar-brand" href="#">SPI</a>
 
 		<ul class="nav navbar-nav">
-			<li role="presentation" class="active"><a href="#">Accueil</a></li>
-			<li role="presentation"><a href="#/formations">Formations</a></li>
-			<li role="presentation"><a href="#/ajouteeFormation">Ajouter une formation</a></li>
+			<li role="presentation" ng-click="activePage = 'accueil'" ng-class="{'active' : activePage == 'accueil'}"><a href="#">Accueil</a></li>
+			<li role="presentation" ng-click="activePage = 'formations'" ng-class="{'active' : activePage == 'formations'}"><a href="#/formations">Formations</a></li>
+			<li role="presentation" ng-click="activePage = 'ajouterFormation'" ng-class="{'active' : activePage == 'ajouterFormation'}"><a href="#/ajouterFormation">Ajouter une formation</a></li>
 		</ul>
 	</div>
-    <div class="container">
-    <div class="row">
-        <h1 class="title">SPI</h1>
-        
-        <div ng-view></div>
-    </div>
-</div>
-	
+	<div class="container">
+		<div class="row">
+			<h1 class="title">SPI</h1>
+
+			<div ng-view></div>
+		</div>
+	</div>
+
 </body>
 
 </html>

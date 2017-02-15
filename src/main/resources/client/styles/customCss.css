@@ -1,6 +1,10 @@
 /* Custom CSS code */
-.btn-danger{
-	border-radius: 5em;
+.my-btn{
+	border-radius: 11px;
+}
+
+.my-btn-edit{
+	float: right;
 }
 
 td a:hover{

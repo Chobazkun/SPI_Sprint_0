@@ -1,4 +1,4 @@
-<div ng-controller="formationCtrl">
+<div ng-controller="formationDetailsCtrl">
 	<div class="alert alert-danger alert-dismissible" role="alert" ng-click="closeAlert()" ng-if="error">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<strong>{{status}}</strong>
@@ -9,41 +9,45 @@
 		<strong>{{status}}</strong>
 	</div>
 
+	<div>
+        <a href="#/formation/{{formation.codeFormation}}/edit" role="button" class="btn btn-info my-btn my-btn-edit"><span class="glyphicon glyphicon-pencil" /></a>
+	</div>
+
 	<table class="table table-striped maTable">
-        <tr>
-            <th>Code formation</th>
-            <td colspan="4">{{formation.codeFormation}}</td>
-        </tr>
+		<tr>
+			<th>Code formation</th>
+			<td colspan="4">{{formation.codeFormation}}</td>
+		</tr>
 
-        <tr>
-            <th>Nom formation</th>
-            <td colspan="4">{{formation.nomFormation}}</td>
-        </tr>
+		<tr>
+			<th>Nom formation</th>
+			<td colspan="4">{{formation.nomFormation}}</td>
+		</tr>
 
-        <tr>
-            <th>Type de diplome</th>
-            <td colspan="4" ng-if="formation.diplome =='M'">Master</td>
-            <td colspan="4"ng-if="formation.diplome == 'L'">Licence</td>
-            <td colspan="4" ng-if="formation.diplome == 'D'">Doctorat</td>
-        </tr>
+		<tr>
+			<th>Type de diplome</th>
+			<td colspan="4" ng-if="formation.diplome =='M'">Master</td>
+			<td colspan="4" ng-if="formation.diplome == 'L'">Licence</td>
+			<td colspan="4" ng-if="formation.diplome == 'D'">Doctorat</td>
+		</tr>
 
-        <tr>
-            <th>Double diplome</th>
-            <td colspan="4" ng-if="formation.estUnDoubleDiplome">Oui</td>
-            <td colspan="4" ng-if="!formation.estUnDoubleDiplome">Non</td>
-        </tr>
+		<tr>
+			<th>Double diplome</th>
+			<td colspan="4" ng-if="formation.estUnDoubleDiplome">Oui</td>
+			<td colspan="4" ng-if="!formation.estUnDoubleDiplome">Non</td>
+		</tr>
 
-        <tr>
-            <th>Numéro année</th>
-            <td colspan="4">{{formation.numeroAnnee}}</td>
-        </tr>
+		<tr>
+			<th>Numéro année</th>
+			<td colspan="4">{{formation.numeroAnnee}}</td>
+		</tr>
 
-        <tr>
-            <th>Accréditation</th>
-            <td width="30">Du</td>
-            <td>{{formation.debutAccreditation}}</td>
-            <td width="30">Au</td>
-            <td>{{formation.finAccreditation}}</td>
-        </tr>
-    </table>
+		<tr>
+			<th>Accréditation</th>
+			<td width="30">Du</td>
+			<td>{{formation.debutAccreditation}}</td>
+			<td width="30">Au</td>
+			<td>{{formation.finAccreditation}}</td>
+		</tr>
+	</table>
 </div>
