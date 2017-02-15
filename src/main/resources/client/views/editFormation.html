@@ -1,0 +1,110 @@
+<div ng-controller="editFormationCtrl">
+	<div class="alert alert-danger alert-dismissible" role="alert" ng-click="closeAlert()" ng-if="error">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>{{status}}</strong>
+	</div>
+
+	<div class="alert alert-success alert-dismissible" role="alert" ng-click="closeAlert()" ng-show="success">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>{{status}}</strong>
+	</div>
+
+	<form>
+		<div class="form-group">
+			<table class="table table-striped maTable">
+				<tr>
+					<th>Code formation</label>
+					</th>
+					<td colspan="10">
+						<div class="col-md-20">
+							<input class="form-control" type="text" ng-model="formation.codeFormation" readonly/>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<th>Nom formation</th>
+					<td colspan="10">
+						<div class="col-md-20">
+							<input class="form-control" type="text" ng-model="formation.nomFormation" />
+						</div>
+					</td>
+
+				</tr>
+
+				<tr>
+					<th>Type de diplome</th>
+					<td colspan="2">
+						<div class="col-md-7">
+							<input class="my-radio-button" type="radio" name="diplome" ng-model="formation.diplome" value="M">Master</input>
+						</div>
+					</td>
+
+					<td colspan="2">
+						<div class="col-md-7">
+							<input type="radio" name="diplome" ng-model="formation.diplome" value="L">Licence</input>
+						</div>
+					</td>
+					<td colspan="2">
+						<div class="col-md-10">
+							<input type="radio" name="diplome" ng-model="formation.diplome" value="D">Doctorat</input>
+						</div>
+					</td>
+
+				</tr>
+
+				<tr>
+					<th>Double diplome</th>
+					<td colspan="2">
+						<div class="col-md-7">
+							<input type="radio" name="doubleDiplome" ng-model="formation.estUnDoubleDiplome" ng-value="true">Oui</input>
+						</div>
+					</td>
+
+					<td colspan="2">
+						<div class="col-md-7">
+							<input type="radio" name="doubleDiplome" ng-model="formation.estUnDoubleDiplome" ng-value="false">Non</input>
+						</div>
+					</td>
+
+				</tr>
+
+				<tr>
+					<th>Numéro année</th>
+					<td colspan="10">
+						<div class="col-md-2">
+							<select class="form-control my-select" name="numeroAnnee" ng-model="formation.numeroAnnee">
+								<option ng-repeat="i in [1, 2, 3]" value="{{i}}">{{$index+1}}</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<th>Accréditation</th>
+					<td width="30">
+						<div class="col-md-1 date-label">Du</div>
+					</td>
+					<td>
+						<div class="col-md-10">
+							<input type="date" class="form-control" max="formation.finAccreditation" ng-model="formation.debutAccreditation" />
+						</div>
+					</td>
+					<td width="30">
+						<div class="col-md-1 date-label">Au</div>
+					</td>
+					<td>
+						<div class="col-md-10">
+							<input type="date" class="form-control" min="formation.debutAccreditation" ng-model="formation.finAccreditation" />
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="btn-group my-btn-group" role="group">
+			<a href="#/formation/{{formation.codeFormation}}/edit" ng-click="updateFormation(formation)" role="button" class="btn btn-success my-btn-form">Valider</a>
+			<a href="#/formations" role="button" class="btn btn-warning my-btn-form">Annuler</a>
+		</div>
+	</form>
+</div>
