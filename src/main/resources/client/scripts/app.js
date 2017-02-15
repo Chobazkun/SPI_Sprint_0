@@ -26,6 +26,10 @@
                     templateUrl: '/views/formationDetails.html',
                     controller: 'formationDetailsCtrl'
                 })
+                .when('/addFormation', {
+                    templateUrl: '/views/addFormation.html',
+                    controller: 'addFormationCtrl'
+                })
                 .when('/formation/:codeFormation/edit', {
                     templateUrl: '/views/editFormation.html',
                     controller: 'editFormationCtrl'

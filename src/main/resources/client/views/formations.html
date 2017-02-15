@@ -9,6 +9,10 @@
 		<strong>{{status}}</strong>
 	</div>
 
+	<div>
+		<a href="#/addFormation" role="button" class="btn btn-success my-btn my-btn-edit-add"><span class="glyphicon glyphicon-plus" /></a>
+	</div>
+
 	<table class="table table-striped">
 		<tr>
 			<th>Code</th>
@@ -21,7 +25,9 @@
 			<td><a href="#/formation/{{formation.codeFormation}}">{{formation.codeFormation}}</a></td>
 			<td><a href="#/formation/{{formation.codeFormation}}">{{formation.nomFormation}}</a></td>
 			<td><a href="#/formation/{{formation.codeFormation}}">{{formation.numeroAnnee}}</a></td>
-			<td><a ng-click="deleteFormation(formation.codeFormation)" role="button" class="btn btn-danger my-btn"><span class="glyphicon glyphicon-remove" /></a></td>
+			<td>
+				<a ng-click="deleteFormation(formation.codeFormation)" role="button" class="btn btn-danger my-btn"><span class="glyphicon glyphicon-remove" /></a>
+			</td>
 		</tr>
 	</table>
 </div>

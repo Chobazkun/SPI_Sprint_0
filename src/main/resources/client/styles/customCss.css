@@ -3,8 +3,9 @@
 	border-radius: 11px;
 }
 
-.my-btn-edit{
+.my-btn-edit-add{
 	float: right;
+	margin-bottom: 5px;
 }
 
 td a:hover{
@@ -36,6 +37,30 @@ td a:hover{
 
 .title{
 	margin-bottom: 1em;
+}
+
+.form-control{
+	border-radius: 5px;
+}
+
+input[type="radio"] {
+  margin-right: 2px;
+}
+
+.date-label{
+	padding-top: 6px;
+}
+
+.my-select{
+	margin-left: -10px;
+}
+
+.my-btn-group{
+	float: right;
+}
+
+.my-btn-form{
+	margin: 0 20px;
 }
 
 /* On using dropdown menu (To right shift popuped) */
