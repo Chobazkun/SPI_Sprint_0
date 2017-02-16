@@ -10,7 +10,7 @@ angular.module('app').controller('appCtrl', ['$scope', '$location', 'dataFactory
         }
 
         $scope.disconnect = function () {
-            dataFactoryUser.disconnect(dataFactoryUser.getUser())
+            dataFactoryUser.disconnect()
                 .then(function (response) {
                     $location.path('/login');
                 }, function (error) {

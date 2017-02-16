@@ -14,8 +14,8 @@ angular.module('app')
             return $http.get(urlBase + 'user' , user);
         };
 
-        dataFactory.disconnect = function (user) {
-            return $http.get(urlBase + 'disconnect' , user);
+        dataFactory.disconnect = function () {
+            return $http.get(urlBase + 'disconnect');
         };
 
         return dataFactory;

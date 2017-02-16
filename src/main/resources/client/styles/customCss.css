@@ -8,6 +8,11 @@
 	margin-bottom: 5px;
 }
 
+my-btn-disconnect{
+  float: right;
+  margin: 10px;
+}
+
 td a:hover{
 	color: #4286f4;
 }
