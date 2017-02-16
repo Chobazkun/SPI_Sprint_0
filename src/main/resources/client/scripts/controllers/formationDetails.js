@@ -1,7 +1,7 @@
 
 //Controlleur de la page qui détaille une formation
-angular.module('app').controller('formationDetailsCtrl', ['$scope', '$routeParams', '$location', 'dataFactory',
-    function ($scope, $routeParams, $location, dataFactory) {
+angular.module('app').controller('formationDetailsCtrl', ['$scope', '$routeParams', '$location', 'dataFactoryFormation',
+    function ($scope, $routeParams, $location, dataFactoryFormation) {
         $scope.status;
         $scope.formation;
         $scope.codeFormation = $routeParams.codeFormation;
@@ -9,7 +9,7 @@ angular.module('app').controller('formationDetailsCtrl', ['$scope', '$routeParam
         $scope.success = false;
 
         $scope.getFormation = function (codeFormation) {
-            dataFactory.getFormation(codeFormation)
+            dataFactoryFormation.getFormation(codeFormation)
                 .then(function (response) {
                     $scope.formation = response.data;
                     $scope.error = false;

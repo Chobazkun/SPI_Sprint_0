@@ -60,32 +60,42 @@
 	<script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
 	<!-- endbuild -->
 
-	<!-- build:js({.tmp,client}) scripts/app.js -->
+	<!-- Routes, dataFactories and directives -->
 	<script src="scripts/app.js"></script>
-    <script src="scripts/dataFactories/dataFactoryFormation.js"></script>
+	<script src="scripts/dataFactories/dataFactoryFormation.js"></script>
+	<script src="scripts/dataFactories/dataFactoryUser.js"></script>
 	<script src="scripts/directives/ng-really.js"></script>
-    <!-- endbuild -->
+	<!-- endbuild -->
 
-    <!-- Controllers -->
+	<!-- Controllers -->
 	<script src="scripts/controllers/formations.js"></script>
-    <script src="scripts/controllers/formationDetails.js"></script>
-    <script src="scripts/controllers/editFormation.js"></script>
+	<script src="scripts/controllers/formationDetails.js"></script>
+	<script src="scripts/controllers/editFormation.js"></script>
 	<script src="scripts/controllers/addFormation.js"></script>
+	<script src="scripts/controllers/login.js"></script>
+	<script src="scripts/controllers/myApp.js"></script>
 	<!-- endControllers -->
 
-	<div class="navbar navbar-inverse navbar-fixed-left">
-		<a class="navbar-brand" href="#">SPI</a>
+	<div ng-controller="appCtrl">
+		<div class="navbar navbar-inverse navbar-fixed-left">
+			<a class="navbar-brand" href="#">SPI</a>
 
-		<ul class="nav navbar-nav">
-			<li role="presentation" ng-click="activePage = 'accueil'" ng-class="{'active' : activePage == 'accueil'}"><a href="#">Accueil</a></li>
-			<li role="presentation" ng-click="activePage = 'formations'" ng-class="{'active' : activePage == 'formations'}"><a href="#/formations">Formations</a></li>
+			<ul class="nav navbar-nav">
+				<li role="presentation" ng-click="activePage = 'accueil'" ng-class="{'active' : activePage == 'accueil'}"><a href="#">Accueil</a></li>
+				<li role="presentation" ng-click="activePage = 'formations'" ng-class="{'active' : activePage == 'formations'}"><a href="#/formations">Formations</a></li>
+			</ul>
+		</div>
+
+		<ul class="nav nav-pills">
+			<li role="presentation" class="active"><a><span class="glyphicon glyphicon-remove-circle"/></a></li>
 		</ul>
-	</div>
-	<div class="container">
-		<div class="row">
-			<h1 class="title">SPI</h1>
 
-			<div ng-view></div>
+		<div class="container">
+			<div class="row">
+				<h1 class="title">SPI</h1>
+
+				<div ng-view></div>
+			</div>
 		</div>
 	</div>
 

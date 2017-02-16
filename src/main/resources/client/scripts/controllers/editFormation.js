@@ -1,7 +1,7 @@
 
 //Controlleur de la page qui met-à-jour une formation
-angular.module('app').controller('editFormationCtrl', ['$scope', '$routeParams', '$location', 'dataFactory',
-    function ($scope, $routeParams, $location, dataFactory) {
+angular.module('app').controller('editFormationCtrl', ['$scope', '$routeParams', '$location', 'dataFactoryFormation',
+    function ($scope, $routeParams, $location, dataFactoryFormation) {
         $scope.status;
         $scope.formation;
         $scope.codeFormation = $routeParams.codeFormation;
@@ -9,7 +9,7 @@ angular.module('app').controller('editFormationCtrl', ['$scope', '$routeParams',
         $scope.success = false;
 
         $scope.getFormation = function (codeFormation) {
-            dataFactory.getFormation(codeFormation)
+            dataFactoryFormation.getFormation(codeFormation)
                 .then(function (response) {
                     $scope.formation = response.data;
                     $scope.error = false;
@@ -21,7 +21,7 @@ angular.module('app').controller('editFormationCtrl', ['$scope', '$routeParams',
         };
 
         $scope.updateFormation = function (formation) {
-            dataFactory.updateFormation(formation)
+            dataFactoryFormation.updateFormation(formation)
                 .then(function (response) {
                     $scope.status = 'Mise à jour de la formation effectuée!';
                     $scope.error = false;

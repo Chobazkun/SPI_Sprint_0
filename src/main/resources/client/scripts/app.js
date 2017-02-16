@@ -34,11 +34,33 @@
                     templateUrl: '/views/editFormation.html',
                     controller: 'editFormationCtrl'
                 })
+                .when('/login', {
+                    templateUrl: '/views/login.html',
+                    controller: 'loginCtrl',
+                    notLoggedNeeded: true
+                })
                 .otherwise({
                     redirectTo: '/accueil'
                 });
         }
-    ]);
+    ])
+        .run(function ($rootScope, $route, $location, dataFactoryUser) {
+            $rootScope.$on("$routeChangeStart", function (event, to) {
+                if (to.notLoggedNeeded) {
+                    console.log("NOT LOGGED");
+                    return;
+                }
+                else {
+                    dataFactoryUser.getUser().success(function (data) {
+                        if (data) {
+                            event.preventDefault();
+                        } else {
+                            $location.path("/login");
+                        }
+                    });
+                }
+            });
+        });
 
 }).call(this);
 

@@ -1,7 +1,7 @@
 
 //DataFactory de l'entité Formation
 angular.module('app')
-    .factory('dataFactory', ['$http', function ($http) {
+    .factory('dataFactoryFormation', ['$http', function ($http) {
 
         var urlBase = 'http://localhost:8090/formation';
         var dataFactory = {};
