@@ -1,7 +1,7 @@
 
 //Controlleur de la page qui ajoute une formation
-angular.module('app').controller('addFormationCtrl', ['$scope', 'dataFactoryFormation',
-    function ($scope, dataFactoryFormation) {
+angular.module('app').controller('addFormationCtrl', ['$scope', '$location', 'dataFactoryFormation',
+    function ($scope, $location, dataFactoryFormation) {
         $scope.status;
         $scope.formation;
         $scope.error = false;
@@ -22,7 +22,11 @@ angular.module('app').controller('addFormationCtrl', ['$scope', 'dataFactoryForm
 
         $scope.closeAlert = function () {
             $scope.error = false;
-            $scope.success = false;
+
+            if ($scope.success) {
+                $scope.success = false;
+                $location.path('/formation/' + $scope.formation.codeFormation);
+            }
         };
     }
 ]);

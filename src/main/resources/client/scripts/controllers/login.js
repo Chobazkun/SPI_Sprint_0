@@ -12,9 +12,10 @@ angular.module('app').controller('loginCtrl', ['$scope', '$location', 'dataFacto
                     $scope.error = false;
                     $scope.success = true;
                 }, function (error) {
+                    console.log(error);
                     $scope.success = false;
                     $scope.error = true;
-                    $scope.status = 'Erreur lors de l\'authentification:' + error.message();
+                    $scope.status = 'Erreur lors de l\'authentification:' + error.data.message;
                 });
         };
 

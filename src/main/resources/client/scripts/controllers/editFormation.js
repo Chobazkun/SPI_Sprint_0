@@ -35,7 +35,11 @@ angular.module('app').controller('editFormationCtrl', ['$scope', '$routeParams',
 
         $scope.closeAlert = function () {
             $scope.error = false;
-            $scope.success = false;
+
+            if ($scope.success) {
+                $scope.success = false;
+                $location.path('/formation/' + $scope.formation.codeFormation);
+            }
         };
 
 

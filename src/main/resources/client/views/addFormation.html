@@ -19,7 +19,7 @@
 					</th>
 					<td colspan="10">
 						<div class="col-md-20">
-							<input class="form-control" type="text" ng-model="formation.codeFormation" />
+							<input class="form-control" type="text" ng-model="formation.codeFormation" required/>
 						</div>
 					</td>
 				</tr>
@@ -28,7 +28,7 @@
 					<th>Nom formation</th>
 					<td colspan="10">
 						<div class="col-md-20">
-							<input class="form-control" type="text" ng-model="formation.nomFormation" />
+							<input class="form-control" type="text" ng-model="formation.nomFormation" required/>
 						</div>
 					</td>
 
@@ -38,18 +38,18 @@
 					<th>Type de diplome</th>
 					<td colspan="2">
 						<div class="col-md-7">
-							<input class="my-radio-button" type="radio" name="diplome" ng-model="formation.diplome" value="M">Master</input>
+							<input class="my-radio-button" type="radio" name="diplome" ng-model="formation.diplome" value="M" required>Master</input>
 						</div>
 					</td>
 
 					<td colspan="2">
 						<div class="col-md-7">
-							<input type="radio" name="diplome" ng-model="formation.diplome" value="L">Licence</input>
+							<input type="radio" name="diplome" ng-model="formation.diplome" value="L" required>Licence</input>
 						</div>
 					</td>
 					<td colspan="2">
 						<div class="col-md-10">
-							<input type="radio" name="diplome" ng-model="formation.diplome" value="D">Doctorat</input>
+							<input type="radio" name="diplome" ng-model="formation.diplome" value="D" required>Doctorat</input>
 						</div>
 					</td>
 
@@ -59,13 +59,13 @@
 					<th>Double diplome</th>
 					<td colspan="2">
 						<div class="col-md-7">
-							<input type="radio" name="doubleDiplome" ng-model="formation.estUnDoubleDiplome" ng-value="true">Oui</input>
+							<input type="radio" name="doubleDiplome" ng-model="formation.estUnDoubleDiplome" ng-value="true" required>Oui</input>
 						</div>
 					</td>
 
 					<td colspan="2">
 						<div class="col-md-7">
-							<input type="radio" name="doubleDiplome" ng-model="formation.estUnDoubleDiplome" ng-value="false">Non</input>
+							<input type="radio" name="doubleDiplome" ng-model="formation.estUnDoubleDiplome" ng-value="false" required>Non</input>
 						</div>
 					</td>
 
@@ -75,7 +75,7 @@
 					<th>Numéro année</th>
 					<td colspan="10">
 						<div class="col-md-2">
-							<select class="form-control my-select" name="numeroAnnee" ng-model="formation.numeroAnnee">
+							<select class="form-control my-select" name="numeroAnnee" ng-model="formation.numeroAnnee" required>
 								<option ng-repeat="i in [1, 2, 3]" value="{{i}}">{{$index+1}}</option>
 							</select>
 						</div>
@@ -105,7 +105,7 @@
 		</div>
 
 		<div class="btn-group my-btn-group" role="group">
-			<a href="#/formation/{{formation.codeFormation}}" ng-click="addFormation(formation)" role="button" class="btn btn-success my-btn-form">Valider</a>
+			<a ng-click="addFormation(formation)" role="button" class="btn btn-success my-btn-form">Valider</a>
 			<a href="#/formations" role="button" class="btn btn-warning my-btn-form">Annuler</a>
 		</div>
 	</form>
