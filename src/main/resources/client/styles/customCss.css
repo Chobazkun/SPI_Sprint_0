@@ -8,7 +8,7 @@
 	margin-bottom: 5px;
 }
 
-my-btn-disconnect{
+.my-btn-logoff{
   float: right;
   margin: 10px;
 }
@@ -19,6 +19,10 @@ td a:hover{
 
 .maTable th{
 	width:20%;
+}
+
+.maTable{
+  margin-top: 3em;
 }
 
 .navbar-fixed-left {
@@ -34,14 +38,8 @@ td a:hover{
 }
 
 .container {
-	margin-right: auto;
-    margin-left: auto;
-    padding-left: 5em;
-    padding-right: 15px;
-}
-
-.title{
-	margin-bottom: 1em;
+	margin: 0 auto;
+  padding: 6em 0em 0em 6em;
 }
 
 .form-control{
@@ -66,6 +64,15 @@ input[type="radio"] {
 
 .my-btn-form{
 	margin: 0 20px;
+}
+
+.my-container-login{
+  margin: 5em auto;
+  width: 15%;
+}
+
+.my-title{
+  margin: 10px auto 3em;
 }
 
 /* On using dropdown menu (To right shift popuped) */

@@ -1,4 +1,4 @@
-<div ng-controller="loginCtrl" class="container">
+<div ng-controller="loginCtrl" class="my-container-login">
 	<div class="alert alert-danger alert-dismissible" role="alert" ng-click="closeAlert()" ng-if="error">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<strong>{{status}}</strong>
@@ -9,23 +9,25 @@
 		<strong>{{status}}</strong>
 	</div>
 
-	<div class="row">
-		<div class="col-md-offset-5 col-md-3">
-			<div class="form-login">
-				<h4>Welcome back.</h4>
-				<input type="text" id="userName" ng-model="user.username" class="form-control input-sm chat-input" placeholder="username"
-				/>
-				</br>
-				<input type="password" id="userPassword" ng-model="user.password" class="form-control input-sm chat-input" placeholder="password"
-				/>
-				</br>
-				<div class="wrapper">
-					<span class="group-btn">     
-                <a ng-click="login()" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-            </span>
-				</div>
-			</div>
+	<div class="form-login">
+		<div class="my-title">
+			<h4><strong>S</strong>uivi de</h4>
+			<h4><strong>P</strong>réparation et </h4>
+			<h4><strong>I</strong>nsertion professionnelle</h4>
+		</div>
 
+		<input type="text" id="userName" ng-model="user.username" class="form-control input-sm chat-input" placeholder="username"
+		/>
+		</br>
+		<input type="password" id="userPassword" ng-model="user.password" class="form-control input-sm chat-input" placeholder="password"
+		/>
+		</br>
+		<div class="wrapper">
+			<form>
+				<span class="group-btn">     
+                	<button type="submit" id="login" ng-click="login()" class="btn btn-primary btn-md">Se connecter <i class="fa fa-sign-in"></i></button>
+            	</span>
+			</form>
 		</div>
 	</div>
 </div>

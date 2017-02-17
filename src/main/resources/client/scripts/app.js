@@ -47,7 +47,6 @@
         .run(function ($rootScope, $route, $location, dataFactoryUser) {
             $rootScope.$on("$routeChangeStart", function (event, to) {
                 if (to.notLoggedNeeded) {
-                    console.log("NOT LOGGED");
                     return;
                 }
                 else {

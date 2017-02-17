@@ -3,10 +3,8 @@
 angular.module('app').controller('appCtrl', ['$scope', '$location', 'dataFactoryUser',
     function ($scope, $location, dataFactoryUser) {
 
-        $scope.isContains = function () {
-            var tab = ['/login'];
-
-            return _.contains(tab, $location.path);
+        $scope.navVisibility = function () {
+            return ($location.path() != "/login");
         }
 
         $scope.disconnect = function () {

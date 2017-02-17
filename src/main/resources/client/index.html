@@ -77,26 +77,26 @@
 	<!-- endControllers -->
 
 	<div ng-controller="appCtrl">
-		<div class="navbar navbar-inverse navbar-fixed-left">
-			<a class="navbar-brand" href="#">SPI</a>
+		<div ng-if="navVisibility()">
+			<div class="navbar navbar-inverse navbar-fixed-left">
+				<a class="navbar-brand" href="#">SPI</a>
 
-			<ul class="nav navbar-nav">
-				<li role="presentation" ng-click="activePage = 'accueil'" ng-class="{'active' : activePage == 'accueil'}"><a href="#">Accueil</a></li>
-				<li role="presentation" ng-click="activePage = 'formations'" ng-class="{'active' : activePage == 'formations'}"><a href="#/formations">Formations</a></li>
-			</ul>
-		</div>
+				<ul class="nav navbar-nav">
+					<li role="presentation" ng-click="activePage = 'accueil'" ng-class="{'active' : activePage == 'accueil'}"><a href="#">Accueil</a></li>
+					<li role="presentation" ng-click="activePage = 'formations'" ng-class="{'active' : activePage == 'formations'}"><a href="#/formations">Formations</a></li>
+				</ul>
+			</div>
 
-		<button type="button" class="btn btn-danger my-btn my-btn-disconnect" ng-click="disconnect()"><span class="glyphicon glyphicon-remove-circle"/></button>
-		
-		<div class="container">
-			<div class="row">
-				<h1 class="title">SPI</h1>
-
-				<div ng-view></div>
+			<div>
+				<button type="button" class="btn btn-danger my-btn my-btn-logoff" ng-really-message="Êtes-vous sûr de bien vouloir vous deconnecter?"
+					ng-really-click="disconnect()"><span class="glyphicon glyphicon-off"/></button>
 			</div>
 		</div>
 	</div>
 
+
+
+	<div ng-view></div>
 </body>
 
 </html>
